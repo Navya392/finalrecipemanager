@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
     <title>Navya_Portfolio</title>
     <style>
         * {
@@ -255,58 +256,141 @@ footer {
     margin-bottom: 2%;
 }
 
-@media  screen and (max-width: 600px){
-    .nav-grid a:not(:first-child) {display: none;}
-    .nav-grid a.icon {
-        display: block;
+@media (max-width: 768px) {
+            #navbar {
+                display: block;
+            }
+            .nav-grid {
+                display: block;
+                text-align: center;
+            }
+            .nav-grid  {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Responsive Container */
+        @media (max-width: 768px) {
+            .container {
+                display: block;
+                text-align: center;
+            }
+            .profile-section {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Responsive Projects Section */
+        @media (max-width: 768px) {
+            .projects-grid {
+                display: block;
+            }
+            .project {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Responsive Education Section */
+@media (max-width: 768px) {
+    .educations-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 20px; /* Add spacing between items */
     }
-    
-}
-@media screen and (max-width: 600px){
-    .nav-grid.responsive {position: relative;}
-    .nav-grid.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
+
+    .education {
+        display: grid; /* Use grid for individual education items */
+        grid-template-columns: 1fr; /* Single column inside each education */
+        text-align: center; /* Center-align the content for mobile */
     }
-    .nav-grid.responsive a {
-        float: none;
-        display: block;
+
+    .education img {
+        width: 80%; /* Make image wider for better visibility */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto 15px; /* Center the image and add space below */
+        float: none; /* Remove floating on mobile */
     }
-    
+
+    .education ul {
+        margin: 0; /* Reset margins */
+        text-align: justify; /* Justify text for better readability */
+    }
+
+    .education h4 {
+        text-align: center; /* Center-align heading */
+    }
 }
 
+        /* Responsive Experience Section */
 @media (max-width: 768px) {
-    
-    .container {
+    .experience {
         grid-template-columns: 1fr;
-        text-align: center;
+        grid-template-rows: auto auto; 
+        text-align: center; 
     }
-    .profile-section img{
-        width: 200px;
-        margin: 0 auto;
+
+    .experience img {
+        width: 100%; 
+        height: auto; 
+        margin-bottom: 15px; 
     }
-    #aboutme p{
-        text-align: center;
-    }
-    .content-grid,.educations-grid,.experience-grid,.blogs-column.achievements-column {
-        grid-template-columns: 1fr;
+
+    .experience-details {
+        text-align: justify; 
     }
 }
-@media screen and (max-width: 600px) {
-    .nav-grid a:not(:first-child) {
+
+
+        /* Responsive Content Section */
+        @media (max-width: 768px) {
+            .content-grid {
+                display: block;
+            }
+            .blogs-column, .achievements-column {
+                margin-bottom: 20px;
+            }
+        }
+       
+        @media screen and (max-width: 900px) { 
+            #navbar a{
+                display: none;
+                padding: 10px;
+            } 
+            #navbar a.icon { 
+                display: block; 
+                padding: 20px;
+                top:6px;
+                position: absolute;
+            } 
+            #navbar {
+                display: block !important;
+            }
+        
+
+            #navbar.responsive {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            #navbar.responsive a.icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            margin:3%;
+            }
+            #navbar.responsive a {
+            display: block;
+            text-align: left;
+            padding: 10px;
+            }
+    } 
+
+@media screen and (min-width: 901px) {
+    #navbar a.icon{
         display: none;
     }
-    .nav-grid.responsive a {
-        float: none;
-        display: block;
-    }
-    .nav-grid.responsive .icon {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
 }
+   
+
 
     </style>
 </head>
@@ -314,24 +398,24 @@ footer {
 
 <body>
     <nav id="navbar">
-        <ul class="nav-grid">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#aboutme">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#educations">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#blogs">Blogs</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li class="icon">
-                <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-            </li>
-        </ul>
+        <div class="nav-grid">
+            <a href="#home">Home</a></li>
+            <a href="#aboutme">About Me</a></li>
+            <a href="#projects">Projects</a></li>
+            <a href="#educations">Education</a></li>
+            <a href="#experience">Experience</a></li>
+            <a href="#blogs">Blogs</a></li>
+            <a href="#achievements">Achievements</a></li>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()"> 
+                <i class="fas fa-bars"></i> 
+            </a>
+        </div>
     </nav>
     
     <header id="home">
         <div class="container">
             <div class="profile-section">
-                <img src="images/myimage.jpg" alt="profile picture">
+                <img src="https://i.pinimg.com/originals/ad/15/5b/ad155b4cfd5b6d220c3e5b51b349a37a.jpg" alt="profile picture">
                 <h2>Navya Gundoju</h2>
                 <h4>Graduate Student(UNH)</h4>
             </div>
@@ -342,7 +426,8 @@ footer {
             clean code and efficient problem-solving with willingness to pursue a challenging career in Software Development domainwith
             a progressive organization where I can put my technical and Interpersonal skills & knowledge to practice. <br>Able to Learn NewTechnologies quickly. 
             <br>Have Experience in Handling Clouds and Knowledge on Virtualization such as VMWare </p>
-            <p>--------------------------------------------------------------------------------------------------------------------------------</p>
+           <br>
+            <!-- <p>--------------------------------------------------------------------------------------------------------------------------------</p> -->
         <h3>My Skills</h3>
         <ul>
             <li>C & C++</li>
@@ -360,7 +445,7 @@ footer {
         <div class="projects-grid">
             <div class="project">
                 <h2>IOT Based solar power monitoring system</h2>
-                <img src="images/project1.jpg" alt="Project 1">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.UwO1KRwYJV3G1OrajJZGKQHaEN&pid=Api&P=0&h=220" alt="Project 1">
                 <p>The main objective of this project is solar monitoring gives real-time visibility into the number
                     of KWH of electricity of solar panels are producing at any given moment in time. It makes certain solar
                     panels are working properly by tracking the power output of the system. <br> It can help to make more
@@ -373,7 +458,7 @@ footer {
             </div>
             <div class="project">
                 <h2>Maximum generation of power by rotating panels</h2>
-                <img src="images/project2.jpg" alt="Project 2">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.zelbYLxlr6PyGaQj2pxy6gHaEK&pid=Api&P=0&h=220" alt="Project 2">
                 <p> An extension to my project1 i have decided this IOT based node red analysis in this project2 Here We more analysis on the same project but used node-Red Dashboard flow and python programming to rotate 
                     the solar panel according to the sun rises temperature from east to west and west to east. It can help to make more
                     awareness of the system. It offers information about energy consumption and generation, damages and
@@ -389,7 +474,7 @@ footer {
         <div class="educations-grid">
             <div class="education">
                 <h4>Graduation</h4>
-                <img src="images/unh.jpg" alt="UNH">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.6kej8fSsFEUQ1_tN32MyhgHaGY&pid=Api&P=0&h=220" alt="UNH">
                 <ul>
                     <li>Pursuing Graduation with CGPA 3.9 out of 4 till 1st semester.</li>
                     <li>Received the Dean Scholarship worth 30% of Tuition Fee in 2023.
@@ -399,7 +484,7 @@ footer {
             </div>
             <div class="education">
                 <h4>Undergraduation</h4>
-                <img src="images/mrecw.jpg" alt="MRECW">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.aJDlKZnrePGAIGVDtIs9gAAAAA&pid=Api&P=0&h=220" alt="MRECW">
                 <ul>
                     <li>Graduated with overall CGPA of 9.2 out of 10.</li>
                     <li>Developed many Projects Such as IOT based solar power etc.</li>
@@ -409,7 +494,7 @@ footer {
             </div>
             <div class="education">
                 <h4>Diploma</h4>
-                <img src="images/gpt.jpg" alt="DIPLOMA">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.g8ZZKmeWYs0LGazmyJ_GWwAAAA&pid=Api&P=0&h=220" alt="DIPLOMA">
                 <ul>
                     <li>Graduated with overall percentage of 92%.</li>
                     <li>Received Best Cadet Award 2017 from DG in National Cadet Corp.</li>
@@ -422,7 +507,7 @@ footer {
         <h1>Experience</h1>
         <div class="experience-grid">
             <div class="experience">
-                <img src="images/experience.jpg" alt="Company 1">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.eVBFaTbPjUZ5fkL1tGl6KgAAAA&pid=Api&P=0&h=220" alt="Company 1">
                 <div class="experience-details">
                     <ul>
                         <li>I worked as a system administrator in DXC Technologies about 1.2 years mainly in HVD support, VMware related to
@@ -444,7 +529,7 @@ footer {
             <div class="blogs-column">
                 <h1>Blogs</h1>
                 <div class="blog">
-                    <img src="images/blog.jpg" alt="Blog 1">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.IhGijgoVTEs0_4rPuUXboQHaE8&pid=Api&P=0&h=220" alt="Blog 1">
                     <h2>My Journey into Web Development</h2>
                     <p>Learn about how I transitioned into the field of web development, the challenges I faced, and the technologies I learned along the way.</p>
                 </div>
@@ -454,7 +539,7 @@ footer {
             <div id = "achievements" class="achievements-column">
                 <h1>Achievements</h1>
                 <div class="achievement">
-                    <img src="images/ncc.jpg" alt="Achievement">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.RuF4cdMMMzypNcTH7i-BXwHaI3&pid=Api&P=0&h=220" alt="Achievement">
                     <h2>NCC Certifications</h2>
                     <p>Received senior certificates and Best cadet award from DG</p>
                     <h2>Dean's Scholarship Award</h2>
